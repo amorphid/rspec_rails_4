@@ -14,5 +14,6 @@ group :doc do
 end
 
 group :test do
+  gem "faker", "1.2.0"
   gem "rspec-rails", "2.14.1"
 end
