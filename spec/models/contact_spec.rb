@@ -11,9 +11,9 @@ describe Contact do
     end
 
     it "presene of first name" do
-      expect(subject).to be_invalid
+      expect(subject).to have(1).errors_on(:first_name)
       subject.first_name = Faker::Name.first_name
-      expect(subject).to be_valid
+      expect(subject).to have(0).errors_on(:first_name)
     end
 
     it "presene of last name"
