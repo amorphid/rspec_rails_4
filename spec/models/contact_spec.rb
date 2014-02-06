@@ -9,7 +9,13 @@ describe Contact do
       subject.email = Faker::Internet.email
       expect(subject).to be_valid
     end
-    it "presene of first name"
+
+    it "presene of first name" do
+      expect(subject).to be_invalid
+      subject.first_name = Faker::Name.first_name
+      expect(subject).to be_valid
+    end
+
     it "presene of last name"
     it "uniqueness of email"
   end
