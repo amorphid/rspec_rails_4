@@ -22,7 +22,12 @@ describe Contact do
       expect(subject).to have(1).errors_on(:last_name)
     end
 
-    it "uniqueness of email"
+    it "uniqueness of email" do
+      contact1       = Fabricate(:contact)
+      contact1_email = contact1.email
+      contact2       = Fabricate.build(:contact, email: contact1_email)
+      expect(contact2).to have(1).errors_on(:email)
+    end
   end
 
   context "#full_name" do
