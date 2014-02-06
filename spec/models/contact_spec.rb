@@ -31,6 +31,11 @@ describe Contact do
   end
 
   context "#full_name" do
-    it "returns first name + last name"
+    it "returns first name + last name" do
+      first_name = subject.first_name
+      last_name  = subject.last_name
+      full_name  = subject.full_name
+      expect(full_name).to eq(first_name + " " + last_name)
+    end
   end
 end
