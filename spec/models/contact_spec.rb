@@ -6,7 +6,7 @@ describe Contact do
   context "validates" do
     it "presene of email" do
       expect(subject).to be_invalid
-      subject.email = "bob@example.com"
+      subject.email = Faker::Internet.email
       expect(subject).to be_valid
     end
     it "presene of first name"
